@@ -1,3 +1,3 @@
-# iModel.js Jump Start
+# Welcome
 
 [Challenges](./challenges/index.md)
