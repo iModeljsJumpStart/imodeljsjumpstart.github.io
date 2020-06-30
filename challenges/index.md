@@ -1,8 +1,4 @@
----
-title: Hello World
----
-
-## Challenges
+# Challenges
 
 - Challenge 1
 
