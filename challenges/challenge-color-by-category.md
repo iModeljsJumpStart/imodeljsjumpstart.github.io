@@ -40,23 +40,27 @@ The best way to learn is by doing!  But, if you want to skip ahead you can go ri
 
 <a onclick="toggleHint('hint-1-1')">Hint 1</a>
 <div class="hint" id="hint-1-1" style="display:none">
-The method you need to call is <a href=https://www.imodeljs.org/reference/imodeljs-frontend/rendering/emphasizeelements/overrideelements target="_blank">EmphasizeElements.overrideElements</a>
+The method you need to call is <a href="https://www.imodeljs.org/reference/imodeljs-frontend/rendering/emphasizeelements/overrideelements" target="_blank">EmphasizeElements.overrideElements</a>
 </div>
+<br>
 
 <a onclick="toggleHint('hint-1-2')">Hint 2</a>
 <div class="hint" id="hint-1-2" style="display:none">
-You need a <a href=https://www.imodeljs.org/reference/ui-components/viewport>Viewport</a>. You can use static methods on <a href="https://www.imodeljs.org/learning/frontend/imodelapp">IModelApp</a> to get the viewport with which the user is currently interacting.
+You need a <a href="https://www.imodeljs.org/reference/ui-components/viewport" target="_blank">Viewport</a>. You can use static methods on <a href="https://www.imodeljs.org/learning/frontend/imodelapp">IModelApp</a> to get the viewport with which the user is currently interacting.
 </div>
+<br>
 
 <a onclick="toggleHint('hint-1-3')">Hint 3</a>
 <div class="hint" id="hint-1-3" style="display:none">
 The viewport you need is <code>IModelApp.viewManager.selectedView</code>
 </div>
+<br>
 
 <a onclick="toggleHint('hint-1-4')">Hint 4</a>
 <div class="hint" id="hint-1-4" style="display:none">
-To get the color value, you need to call <a href="https://github.com/iModeljsJumpStart/challenge-color-by-category/blob/46b662475827c3f25ddfcfafddcc11ad36b661bb/src/frontend/app/ColorByCategory.ts#L32">ColorByCategoryListener.getNextColor</a>
+To get the color value, you need to call <a href="https://github.com/iModeljsJumpStart/challenge-color-by-category/blob/46b662475827c3f25ddfcfafddcc11ad36b661bb/src/frontend/app/ColorByCategory.ts#L32" target="_blank">ColorByCategoryListener.getNextColor</a>
 </div>
+<br>
 
 <a onclick="toggleHint('hint-1-5')">Hint 5</a>
 <div class="hint" id="hint-1-5" style="display:none">
@@ -72,6 +76,7 @@ emph.overrideElements(ids, vp, this.getNextColor());
 }
 </pre></code>
 </div>
+<br>
 
 </div>
 
@@ -101,16 +106,19 @@ MessageManager.outputMessage(new ReactNotifyMessageDetails(OutputMessagePriority
 <div class="hint" id="hint-3-1" style="display:none">
 Use the property Category.Id on GeometricElement3d.
 </div>
+<br>
 
 <a onclick="toggleHint('hint-3-2')">Hint 2</a>
 <div class="hint" id="hint-3-2" style="display:none">
 You need to join the two tables <code>ON</code> the condition that the <code>ecinstanceid</code> of the category is equal to the <code>category.id</code> of the geometric element.
 </div>
+<br>
 
 <a onclick="toggleHint('hint-3-3')">Hint 3</a>
 <div class="hint" id="hint-3-3" style="display:none">
 You need to limit the results with a <code>WHERE</code> clause so you consider only the geometric element with the specified inputId.
 </div>
+<br>
 
 <a onclick="toggleHint('hint-3-4')">Hint 4</a>
 <div class="hint" id="hint-3-4" style="display:none">
@@ -122,6 +130,7 @@ const query = `SELECT cat.codeValue categoryName
     WHERE selected.ecinstanceid = ` + inputId;
 </pre></code>
 </div>
+<br>
 
 </div>
 
