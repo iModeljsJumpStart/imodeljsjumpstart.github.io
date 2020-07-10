@@ -3,7 +3,7 @@
 ## Summary
 
 By completing this you will learn how to:
-- Registering a new project to be used with the imodel console.
+- Create a new imodel to be used with the imodel console.
 - Query for specific properties in an ECClass.
 - Join classes for additional information.
 - Add conditions to find specific elements.
@@ -13,17 +13,17 @@ By completing this you will learn how to:
 1) Go to the getting-started registration [dashboard](https://www.imodeljs.org/getting-started/registration-dashboard?tab=1).
   * If you haven't registered yet, register a new account.
 2) Click on "New iModel"
-3) Name the project whatever you like (i.e. "House Sample").
+3) Name the imodel whatever you like (i.e. "My House Sample").
 4) In the drop-down menu, select "House Sample".
 5) Click on "submit" and allow the process to complete.
-6) Navigate to the [imodel console](https://imodelconsole.bentley.com)
+6) Navigate to the [imodel console](https://imodelconsole.bentley.com).
 7) Follow the sign-in process to gain access to the console.
 7) (Optional): Read through the quick tips and do the tutorial.
 8) (Optional): If you're not familiar with ECSQL/SQL, check out our [learning page](https://www.imodeljs.org/learning/ecsql/)
 
 ## Instructions
 
-Once the setup is complete, we'll need to open the project you've just cloned in the imodel console.
+Once the setup is complete, we'll need to open the imodel you've just cloned using the imodel console.
 
 ### Opening your imodel in the console.
 
@@ -66,9 +66,9 @@ The format should look similar to: <code>SELECT ____, ____, ____ FROM ____</code
 <code>SELECT ECInstanceId, UserLabel, Origin FROM Bis.SpatialElement</code>
 </div>
 
-### 3) While the origin locates the spatial element is, the size is still unknown. We need to query from class "Bis.SpatialIndex" for this.
+### 3) While the origin locates where the spatial element is, the size is still unknown. We need to query from the class "Bis.SpatialIndex" for this.
 
-* Write a query (similar to step 1) that lists all information available in class `Bis.SpatialIndex`
+* Write a query (similar to step 1) that lists all information available from the class `Bis.SpatialIndex`
 * Class [Bis.SpatialIndex](https://www.imodeljs.org/bis/domains/biscore.ecschema/#spatialindex) contains range information for spatial elements
 
 <a onclick="toggleHint('hint-1-5')">Solution For Step 3</a>
@@ -134,7 +134,7 @@ The format should look similar to: <br>
 <code>SELECT e.UserLabel, i.MinZ, i.MinY, i.MinZ, i.MaxX, i.MaxY, i.MaxZ FROM bis.SpatialElement e JOIN bis.SpatialIndex i ON e.ECInstanceId=i.ECInstanceId WHERE i.MinX >= 5 AND i.MinY >= 6 </code>
 </div>
 
-### 7) The final challenge is to get the user labels of all spatial elements that is contained in a cube with the minimum bounding coordinate at (5, 6, 6) and maximum bounding coordinate at (15, 15, 14).
+### 7) The final challenge is to get the user labels of all spatial elements that are contained in a cube with the minimum bounding coordinate at (5, 6, 6) and maximum bounding coordinate at (15, 15, 14).
 
 * (X, Y, Z) are cartesian coordinates.
 
@@ -145,7 +145,7 @@ The format should look similar to: <br>
 
 ## Conclusion
 
-So, were you up to the challenge? Feel free to explore the console and experiment with your own queries. You can learn much more about how ECSQL queries work [here](https://www.imodeljs.org/learning/ecsql/)
+So, were you up to the challenge? Feel free to explore the console and experiment with your own queries. You can learn much more about how ECSQL queries work [here](https://www.imodeljs.org/learning/ecsql/).
 
 Feedback is welcome!  Let us know via the [iModel.js community](https://www.imodeljs.org/learning/communityresources/).
 
