@@ -10,8 +10,7 @@ By completing this you will learn how to:
 
 ## Setup
 
-1) Go to the getting started registration [dashboard](https://www.imodeljs.org/getting-started/registration-dashboard?tab=1).
-  * If you haven't registered yet, please register a new account.
+1) Go to the getting started registration [dashboard](https://www.imodeljs.org/getting-started/registration-dashboard?tab=1) (If you haven't registered yet, please register a new account)
 2) Click on "New iModel"
 3) Name the imodel whatever you like (i.e. "My House Sample").
 4) In the drop down menu, select "House Sample".
