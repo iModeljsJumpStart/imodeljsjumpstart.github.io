@@ -66,7 +66,7 @@ The format should look similar to: <code>SELECT ____, ____, ____ FROM ____</code
 <code>SELECT ECInstanceId, UserLabel, Origin FROM Bis.SpatialElement</code>
 </div>
 
-### 3) While the origin locates the spatial element is, the size is still unknown. We need to query from class "Bis.SpatialIndex" for this.
+### 3) While the origin locates where the spatial element is, the size is still unknown. We need to query from class "Bis.SpatialIndex" for this.
 
 * Write a query (similar to step 1) that lists all information available in class `Bis.SpatialIndex`
 * Class [Bis.SpatialIndex](https://www.imodeljs.org/bis/domains/biscore.ecschema/#spatialindex) contains range information for spatial elements
