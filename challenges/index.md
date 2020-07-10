@@ -10,4 +10,4 @@ Learn to create your own non-graphic desktop app which can query an [iModel Snap
 
 - [Getting started with the imodel console](challenge-imodel-console.md)
 
-Learn useful queries to make the most of your imodels.
+Learn useful queries to make the most out of visualizing your imodels.
