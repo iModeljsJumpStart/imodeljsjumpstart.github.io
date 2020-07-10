@@ -1,51 +1,150 @@
-# Challenge: Creating useful queries
+# Challenge: Display all user labels associated with spatial elements in a confined space (cube).
 
 ## Summary
 
 By completing this you will learn how to:
 - Registering a new project to be used with the imodel console.
-- Learn useful ECSQL queries.
-
-// Do users already have a background in SQL?
+- Query for specific properties in an ECClass.
+- Join classes for additional information.
+- Add conditions to find specific elements.
 
 ## Setup
 
-// TODO
+1) Go to the getting-started registration [dashboard](https://www.imodeljs.org/getting-started/registration-dashboard?tab=1).
+  * If you haven't registered yet, register a new account.
+2) Click on "New iModel"
+3) Name the project whatever you like (i.e. "House Sample").
+4) In the drop-down menu, select "House Sample".
+5) Click on "submit" and allow the process to complete.
+6) Navigate to the [imodel console](https://imodelconsole.bentley.com)
+7) Follow the sign-in process to gain access to the console.
+7) (Optional): Read through the quick tips and do the tutorial.
+8) (Optional): If you're not familiar with ECSQL/SQL, check out our [learning page](https://www.imodeljs.org/learning/ecsql/)
 
-// Will all challenges be based on the same imodel?
+## Instructions
 
-## Goals
+Once the setup is complete, we'll need to open the project you've just cloned in the imodel console.
 
-# Opening your project on imodelconsole.bentley.com
-// Point and click to target and open cloned project
+### Opening your imodel in the console.
 
-// How much background needs to be provided for our Bis Schema?
+1) Click on your project name in the table under "Listing all Contexts" to display imodels associated with the project
+2) Click on your imodel name in the table under "Listing iModels from Project" to display changets associated with the project
+3) Click on the named version id to finally open the imodel.
 
-# Providing more descriptive labels 
-**Goal** Provide a more descriptive userlabe - displaya more descriptive form of the label by replacing 'Fabric' with 'GreenFabric'
+Congratulations! The imodel is now open and ready for queries.
 
-// Hint/Solution
-> SELECT ECInstanceId, UserLabel, replace(UserLabel,'Fabric','SoftFabric') ModifiedLabel FROM bis.Element WHERE UserLabel LIKE '%Fabric%'
+## Steps to complete the challenge
 
-# Limiting the results of queries
-**Goal** Return all [SpatialElement](https://www.imodeljs.org/bis/domains/biscore.ecschema/#spatialelement)s that do have a user label and limit the results to 5
-// Hint/Solution
-> SELECT ECInstanceId,ECClassId, UserLabel FROM bis.SpatialElement WHERE UserLabel IS NOT NULL LIMIT 5
+### 1) Let's begin by listing all information available for all [spatial elements](https://www.imodeljs.org/bis/domains/biscore.ecschema/#spatialelement) in the imodel.
 
-# Targetting specific ECClasses
-// Background on ECClasses
-**Goal** Returns elements only if it's exactly of the specified types - sub-classes are not included
+* Try to write a query to pull all ECProperties from ECClass `Bis.SpatialElement`
+* The qualifier for all properties is '`*`'
 
-// Hint/Solution
-> SELECT * FROM bis.Element WHERE ECClassId IS (ONLY Generic.PhysicalObject, ONLY BisCore.LightLocation)
+<a onclick="toggleHint('hint-1-1')">Hint For Step 1</a>
+<div class="hint" id="hint-1-1" style="display:none">
+The format should look similar to: <code>SELECT ____ FROM ____</code>
+</div>
 
-# Joining tables to aggregate information
-**Goal** Return the [Model](https://www.imodeljs.org/bis/domains/BisCore.ecschema.md#model) that contains the [Element](https://www.imodeljs.org/bis/domains/BisCore.ecschema.md#element) with code containing 'Sheets'
+<a onclick="toggleHint('hint-1-2')">Solution Step 1</a>
+<div class="hint" id="hint-1-2" style="display:none">
+<code>SELECT * FROM Bis.SpatialElement</code>
+</div>
 
-// Hint/Solution
-> SELECT rel.SourceECInstanceId ModelId FROM bis.ModelContainsElements rel JOIN bis.Element ON rel.TargetECInstanceId=Element.ECInstanceId WHERE Element.CodeValue='Sheets'
+### 2) Now instead of pulling all properties, let's write a query that only lists the EC properties we're interested in: "ECInstanceId", "UserLabel" and "Origin"
 
-# Spatial queries
-**Goal** Return all [SpatialElement](https://www.imodeljs.org/bis/domains/biscore.ecschema/#spatialelement)s that are contained or overlap a cube defined by the minimum coordinate (0, 0, 0) and maximum coordinate (415|120|15).
-// Hint/Solution
-> SELECT e.ECInstanceId, e.UserLabel, i.MinX, i.MinY, i.MinZ, i.MaxX, i.MaxY, i.MaxZ FROM bis.SpatialElement e JOIN bis.SpatialIndex i ON e.ECInstanceId=i.ECInstanceId WHERE i.MinX<=415 AND i.MinY<=120 AND i.MinZ<=15 AND i.MaxX >= 0 AND i.MaxY >= 0 AND i.MaxZ >= 0
+* ECInstanceId is the `unique` identifier for the element.
+* UserLabel is a user created label to describe the element.
+* Origin will tell us where the element is in the 3d space.
+
+<a onclick="toggleHint('hint-1-3')">Hint For Step 2</a>
+<div class="hint" id="hint-1-3" style="display:none">
+The format should look similar to: <code>SELECT ____, ____, ____ FROM ____</code>
+</div>
+
+<a onclick="toggleHint('hint-1-4')">Solution Step 2</a>
+<div class="hint" id="hint-1-4" style="display:none">
+<code>SELECT ECInstanceId, UserLabel, Origin FROM Bis.SpatialElement</code>
+</div>
+
+### 3) While the origin tells us where the spatial element is - it doesn't tell us the size of the element. We'll need to query from class "Bis.SpatialIndex" for this.
+
+* Class [Bis.SpatialIndex](https://www.imodeljs.org/bis/domains/biscore.ecschema/#spatialindex) contains range information for spatial elements
+* Try to write a query (similar to step 1) that lists all information available in class `Bis.SpatialIndex`
+
+<a onclick="toggleHint('hint-1-5')">Solution For Step 3</a>
+<div class="hint" id="hint-1-5" style="display:none">
+<code>SELECT * FROM Bis.SpatialIndex</code>
+</div>
+
+### 4) While SpatialIndex contains the range, it doesn't contain 'UserLabel'. We need to `JOIN` class `Bis.SpatialElement` and class `Bis.SpatialIndex` together.
+
+* Write a query to to combine all the information from class `Bis.SpatialElement` and `Bis.SpatialIndex` together.
+* To join the classes, we need to find which ECProperty exists in both classes to `JOIN` on.
+
+<a onclick="toggleHint('hint-1-6')">Hint 1 For Step 4</a>
+<div class="hint" id="hint-1-6" style="display:none">
+The joining property is <code>ECInstanceId</code>. (i.e. <code>Bis.SpatialElement.ECInstanceId</code> and <code>Bis.SpatialIndex.ECInstanceId</code>)
+</div>
+
+<a onclick="toggleHint('hint-1-7')">Hint 2 For Step 4</a>
+<div class="hint" id="hint-1-7" style="display:none">
+The format should look similar to: <br>
+<code>SELECT * FROM ____ JOIN ____ ON ____ = ____</code>
+</div>
+
+<a onclick="toggleHint('hint-1-8')">Solution For Step 4</a>
+<div class="hint" id="hint-1-8" style="display:none">
+<code>SELECT * FROM bis.SpatialElement JOIN bis.SpatialIndex ON bis.SpatialElement.ECInstanceId=bis.SpatialIndex.ECInstanceId</code>
+</div>
+
+### 5) You'll notice this is too much information again - let's only pull the information we want to see.
+
+* Write a query to pull only `UserLabel` from `Bis.SpatialElement` and `MinX, MinY, MinZ, MaxX, MaxY, MaxZ` from `Bis.SpatialIndex`
+* TIP: We can alias names - instead of writing `bis.SpatialElement.ECInstanceId`, we can write `e.ECInstanceId` if we declare `SELECT ... FROM bis.SpatialElement e`
+
+<a onclick="toggleHint('hint-1-9')">Hint For Step 5</a>
+<div class="hint" id="hint-1-9" style="display:none">
+The format should look similar to: <br>
+<code> SELECT e.____, i.____, i.____, i.____, i.____ FROM ____ e JOIN ____ i ON e.____ = i.____</code>
+</div>
+
+<a onclick="toggleHint('hint-1-10')">Solution For Step 5</a>
+<div class="hint" id="hint-1-10" style="display:none">
+<code>SELECT e.UserLabel, i.MinZ, i.MinY, i.MinZ, i.MaxX, i.MaxY, i.MaxZ FROM bis.SpatialElement e JOIN bis.SpatialIndex i ON e.ECInstanceId=i.ECInstanceId</code>
+</div>
+
+### 6) Now we have exactly all the information we need. It's time to add a simple condition.
+
+* Write a query with the WHERE clause to show only spatial elements that have a MinX >= 5 AND MinY >= 6.
+* The format for WHERE clause is `FROM ... WHERE ... AND ...`
+
+<a onclick="toggleHint('hint-1-11')">Hint For Step 6</a>
+<div class="hint" id="hint-1-11" style="display:none">
+The format should look similar to: <br>
+<code> SELECT e.____, i.____, i.____, i.____, i.____ FROM ____ e JOIN ____ i ON e.____ = i.____ WHERE i.___ >= 5 AND i.___ >= 6</code>
+</div>
+
+<a onclick="toggleHint('hint-1-12')">Solution For Step 6</a>
+<div class="hint" id="hint-1-12" style="display:none">
+<code>SELECT e.UserLabel, i.MinZ, i.MinY, i.MinZ, i.MaxX, i.MaxY, i.MaxZ FROM bis.SpatialElement e JOIN bis.SpatialIndex i ON e.ECInstanceId=i.ECInstanceId WHERE i.MinX >= 5 AND i.MinY >= 6 </code>
+</div>
+
+### 7) The final challenge is to get the user labels of all spatial elements that is contained in a cube with the minimum bounding coordinate at (5, 6, 6) and maximum bounding coordinate at (15, 15, 14).
+
+* The coordinates follows an (X, Y, Z) coordinate pattern.
+
+<a onclick="toggleHint('hint-1-12')">Solution For Step 7</a>
+<div class="hint" id="hint-1-12" style="display:none">
+<code> SELECT e.UserLabel, i.MinZ, i.MinY, i.MinZ, i.MaxX, i.MaxY, i.MaxZ FROM bis.SpatialElement e JOIN bis.SpatialIndex i ON e.ECInstanceId=i.ECInstanceId WHERE i.MinX >= 5 AND i.MinY >= 6 AND i.MinZ >= 6 AND i.MaxX <= 15 AND i.MaxY <= 15 AND i.MaxZ <= 14</code>
+</div>
+
+<script type="text/javascript">
+    function toggleHint (hintId) {
+        var hint = document.getElementById(hintId);
+        if (hint.style.display === "none") {
+        hint.style.display = "block";
+        } else {
+        hint.style.display = "none";
+        }
+    }
+</script>
