@@ -37,7 +37,7 @@ Congratulations! The imodel is now open and ready for queries.
 
 ### 1) Let's begin by listing all information available for all [spatial elements](https://www.imodeljs.org/bis/domains/biscore.ecschema/#spatialelement) in the imodel.
 
-* Try to write a query to pull all ECProperties from ECClass `Bis.SpatialElement`
+* Write a query to pull all ECProperties from ECClass `Bis.SpatialElement`
 * The qualifier for all properties is '`*`'
 
 <a onclick="toggleHint('hint-1-1')">Hint For Step 1</a>
@@ -68,7 +68,7 @@ The format should look similar to: <code>SELECT ____, ____, ____ FROM ____</code
 
 ### 3) While the origin tells us where the spatial element is, it doesn't tell us the size of the element. We need to query from class "Bis.SpatialIndex" for this.
 
-* Try to write a query (similar to step 1) that lists all information available in class `Bis.SpatialIndex`
+* Write a query (similar to step 1) that lists all information available in class `Bis.SpatialIndex`
 * Class [Bis.SpatialIndex](https://www.imodeljs.org/bis/domains/biscore.ecschema/#spatialindex) contains range information for spatial elements
 
 <a onclick="toggleHint('hint-1-5')">Solution For Step 3</a>
