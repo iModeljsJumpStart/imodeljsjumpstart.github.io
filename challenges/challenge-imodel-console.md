@@ -78,7 +78,7 @@ The format should look similar to: <code>SELECT ____, ____, ____ FROM ____</code
 
 ### 4) Notice how SpatialIndex contains the range but it doesn't contain 'UserLabel'. We need to `JOIN` class `Bis.SpatialElement` and class `Bis.SpatialIndex` together.
 
-* Write a query to to combine all the information from class `Bis.SpatialElement` and `Bis.SpatialIndex` together.
+* Write a query to to combine all EC properties from class `Bis.SpatialElement` and `Bis.SpatialIndex` together.
 * To join the classes, we need to find the key ECProperty that both classes can `JOIN` on.
 
 <a onclick="toggleHint('hint-1-6')">Hint 1 For Step 4</a>
