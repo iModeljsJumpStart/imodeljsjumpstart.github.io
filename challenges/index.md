@@ -8,3 +8,6 @@ Learn to override the appearance of element geometry.
 
 Learn to create your own non-graphic desktop app which can query an [iModel Snapshot](https://www.imodeljs.org/learning/backend/accessingimodels/).
 
+- [Getting started with the imodel console](challenge-imodel-console.md)
+
+Learn useful queries to make the most of your imodels.
