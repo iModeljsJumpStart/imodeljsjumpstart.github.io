@@ -50,7 +50,7 @@ The format should look similar to: <code>SELECT ____ FROM ____</code>
 <code>SELECT * FROM Bis.SpatialElement</code>
 </div>
 
-### 2) Now instead of pulling all properties, let's write a query that only lists the EC properties we're interested in: "ECInstanceId", "UserLabel" and "Origin"
+### 2) Instead of displaying all EC properties, write a query that only lists the EC properties we're interested in: "ECInstanceId", "UserLabel" and "Origin"
 
 * ECInstanceId is the `unique` identifier for the element.
 * UserLabel is a user created label to describe the element.
@@ -66,10 +66,10 @@ The format should look similar to: <code>SELECT ____, ____, ____ FROM ____</code
 <code>SELECT ECInstanceId, UserLabel, Origin FROM Bis.SpatialElement</code>
 </div>
 
-### 3) While the origin tells us where the spatial element is, it doesn't tell us the size of the element. We'll need to query from class "Bis.SpatialIndex" for this.
+### 3) While the origin tells us where the spatial element is, it doesn't tell us the size of the element. We need to query from class "Bis.SpatialIndex" for this.
 
-* Class [Bis.SpatialIndex](https://www.imodeljs.org/bis/domains/biscore.ecschema/#spatialindex) contains range information for spatial elements
 * Try to write a query (similar to step 1) that lists all information available in class `Bis.SpatialIndex`
+* Class [Bis.SpatialIndex](https://www.imodeljs.org/bis/domains/biscore.ecschema/#spatialindex) contains range information for spatial elements
 
 <a onclick="toggleHint('hint-1-5')">Solution For Step 3</a>
 <div class="hint" id="hint-1-5" style="display:none">
@@ -97,7 +97,7 @@ The format should look similar to: <br>
 <code>SELECT * FROM bis.SpatialElement JOIN bis.SpatialIndex ON bis.SpatialElement.ECInstanceId=bis.SpatialIndex.ECInstanceId</code>
 </div>
 
-### 5) You'll notice this is too much information we don't need. Let's only pull the information we want to see.
+### 5) Once again the data shown is too verbose. Only pull the information we want to see.
 
 * Write a query to pull only `UserLabel` from `Bis.SpatialElement` and `MinX, MinY, MinZ, MaxX, MaxY, MaxZ` from `Bis.SpatialIndex`
 * TIP: We can alias names - instead of writing `bis.SpatialElement.ECInstanceId`, we can write `e.ECInstanceId` if we declare `SELECT ... FROM bis.SpatialElement e`
