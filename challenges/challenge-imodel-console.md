@@ -134,7 +134,7 @@ The format should look similar to: <br>
 <code>SELECT e.UserLabel, i.MinZ, i.MinY, i.MinZ, i.MaxX, i.MaxY, i.MaxZ FROM bis.SpatialElement e JOIN bis.SpatialIndex i ON e.ECInstanceId=i.ECInstanceId WHERE i.MinX >= 5 AND i.MinY >= 6 </code>
 </div>
 
-### 7) The final challenge is to get the user labels of all spatial elements that are contained in a cube with the minimum bounding coordinate at (5, 6, 6) and maximum bounding coordinate at (15, 15, 14).
+### 7) The final challenge is to retrieve the user labels of all spatial elements that are contained in a cube with the minimum bounding coordinate at (5, 6, 6) and maximum bounding coordinate at (15, 15, 14).
 
 * (X, Y, Z) are cartesian coordinates.
 
