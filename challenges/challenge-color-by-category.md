@@ -11,13 +11,20 @@ By completing this you will learn how to:
 
 ## Setup
 
-1. Clone the repo [from github](https://github.com/iModeljsJumpStart/challenge-color-by-category)
+1. Install the [required tools](https://www.imodeljs.org/getting-started/)
 
-2. `npm install`
+2. Clone the repo [from github](https://github.com/iModeljsJumpStart/challenge-color-by-category)
 
-3. `npm run`
+3. `npm install`
 
-4. The app should run and display a small model of a plant.
+4. `npm run`
+
+5. `npm run`
+
+6. The app should run and display a small model of a plant.
+
+Note: The app will be built automatically in step 3, and will be automatically updated anytime you make code changes.  There is no need to stop and restart
+the app manually when making code changes.
 
 ## Goals
 
@@ -136,7 +143,9 @@ const query = `SELECT cat.codeValue categoryName
 
 ## Conclusion
 
-So, were you to the challenge? Check out how we solved it by viewing our [full solution](https://github.com/iModeljsJumpStart/challenge-color-by-category-solution/blob/master/src/frontend/app/ColorByCategory.ts).  Let us know if you have a better way.
+So, were you up to the challenge? Check out how we solved it by viewing our [full solution](https://github.com/iModeljsJumpStart/challenge-color-by-category-solution/blob/master/src/frontend/app/ColorByCategory.ts).  Let us know if you have a better way.
+
+Feedback is welcome!  Let us know via the [iModel.js community](https://www.imodeljs.org/learning/communityresources/).
 
 
 <script type="text/javascript">
