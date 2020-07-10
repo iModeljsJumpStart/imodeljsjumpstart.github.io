@@ -10,15 +10,15 @@ By completing this you will learn how to:
 
 ## Setup
 
-1) Go to the getting started registration [dashboard](https://www.imodeljs.org/getting-started/registration-dashboard?tab=1) (If you haven't registered yet, please register a new account)
-2) Click on "New iModel"
-3) Name the imodel whatever you like (i.e. "My House Sample").
-4) In the drop down menu, select "House Sample".
-5) Click on "submit" and allow the process to complete.
-6) Navigate to the [imodel console](https://imodelconsole.bentley.com).
-7) Follow the sign in process to gain access to the console.
-7) (Optional): Read through the quick tips and do the tutorial.
-8) (Optional): If you're not familiar with ECSQL/SQL, check out our [learning page](https://www.imodeljs.org/learning/ecsql/)
+1. Go to the getting started registration [dashboard](https://www.imodeljs.org/getting-started/registration-dashboard?tab=1) (If you haven't registered yet, please register a new account)
+2. Click on "New iModel"
+3. Name the imodel whatever you like (i.e. "My House Sample").
+4. In the drop down menu, select "House Sample".
+5. Click on "submit" and allow the process to complete.
+6. Navigate to the [imodel console](https://imodelconsole.bentley.com).
+7. Follow the sign in process to gain access to the console.
+7. (Optional): Read through the quick tips and do the tutorial.
+8. (Optional): If you're not familiar with ECSQL/SQL, check out our [learning page](https://www.imodeljs.org/learning/ecsql/)
 
 ## Instructions
 
@@ -26,9 +26,9 @@ Once the setup is complete, we'll need to open the imodel you've just cloned usi
 
 ### Opening your imodel in the console.
 
-1) Click on your project name in the table under "Listing all Contexts" to display imodels associated with the project
-2) Click on your imodel name in the table under "Listing iModels from Project" to display changets associated with the project
-3) Click on the named version id to finally open the imodel.
+1. Click on your project name in the table under "Listing all Contexts" to display imodels associated with the project
+2. Click on your imodel name in the table under "Listing iModels from Project" to display changets associated with the project
+3. Click on the named version id to finally open the imodel.
 
 Congratulations! The imodel is now open and ready for queries.
 
