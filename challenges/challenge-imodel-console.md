@@ -78,22 +78,27 @@ The format should look similar to: <code>SELECT ____, ____, ____ FROM ____</code
 
 ### 4) Notice how SpatialIndex contains the range but it doesn't contain 'UserLabel'. We need to `JOIN` class `Bis.SpatialElement` and class `Bis.SpatialIndex` together.
 
-* Write a query to to combine all EC properties from class `Bis.SpatialElement` and `Bis.SpatialIndex` together.
+* Write a query to to display all EC properties from class `Bis.SpatialElement` and `Bis.SpatialIndex` together.
 * To join the classes, we need to find the key ECProperty that both classes can `JOIN` on.
 
 <a onclick="toggleHint('hint-1-6')">Hint 1 For Step 4</a>
 <div class="hint" id="hint-1-6" style="display:none">
-The joining property key is <code>ECInstanceId</code>. (i.e. <code>Bis.SpatialElement.ECInstanceId</code> and <code>Bis.SpatialIndex.ECInstanceId</code>)
+The syntax to join is <code>... FROM Class JOIN OtherClass ON ClassKeyProperty = OtherClassKeyProperty`</code>
 </div>
 
 <a onclick="toggleHint('hint-1-7')">Hint 2 For Step 4</a>
 <div class="hint" id="hint-1-7" style="display:none">
+The joining property key is <code>ECInstanceId</code>. (i.e. <code>Bis.SpatialElement.ECInstanceId</code> and <code>Bis.SpatialIndex.ECInstanceId</code>)
+</div>
+
+<a onclick="toggleHint('hint-1-8')">Hint 3 For Step 4</a>
+<div class="hint" id="hint-1-8" style="display:none">
 The format should look similar to: <br>
 <code>SELECT * FROM ____ JOIN ____ ON ____ = ____</code>
 </div>
 
-<a onclick="toggleHint('hint-1-8')">Solution For Step 4</a>
-<div class="hint" id="hint-1-8" style="display:none">
+<a onclick="toggleHint('hint-1-9')">Solution For Step 4</a>
+<div class="hint" id="hint-1-9" style="display:none">
 <code>SELECT * FROM bis.SpatialElement JOIN bis.SpatialIndex ON bis.SpatialElement.ECInstanceId=bis.SpatialIndex.ECInstanceId</code>
 </div>
 
@@ -102,14 +107,14 @@ The format should look similar to: <br>
 * Write a query to pull only `UserLabel` from `Bis.SpatialElement` and `MinX, MinY, MinZ, MaxX, MaxY, MaxZ` from `Bis.SpatialIndex`
 * TIP: We can alias names - instead of writing `bis.SpatialElement.ECInstanceId`, we can write `e.ECInstanceId` if we declare `SELECT ... FROM bis.SpatialElement e`
 
-<a onclick="toggleHint('hint-1-9')">Hint For Step 5</a>
-<div class="hint" id="hint-1-9" style="display:none">
+<a onclick="toggleHint('hint-1-10')">Hint For Step 5</a>
+<div class="hint" id="hint-1-10" style="display:none">
 The format should look similar to: <br>
 <code> SELECT e.____, i.____, i.____, i.____, i.____ FROM ____ e JOIN ____ i ON e.____ = i.____</code>
 </div>
 
-<a onclick="toggleHint('hint-1-10')">Solution For Step 5</a>
-<div class="hint" id="hint-1-10" style="display:none">
+<a onclick="toggleHint('hint-1-11')">Solution For Step 5</a>
+<div class="hint" id="hint-1-11" style="display:none">
 <code>SELECT e.UserLabel, i.MinZ, i.MinY, i.MinZ, i.MaxX, i.MaxY, i.MaxZ FROM bis.SpatialElement e JOIN bis.SpatialIndex i ON e.ECInstanceId=i.ECInstanceId</code>
 </div>
 
@@ -118,14 +123,14 @@ The format should look similar to: <br>
 * Write a query with the WHERE clause to show only spatial elements that have a MinX >= 5 AND MinY >= 6.
 * The format for WHERE clause is `FROM ... WHERE ... AND ...`
 
-<a onclick="toggleHint('hint-1-11')">Hint For Step 6</a>
-<div class="hint" id="hint-1-11" style="display:none">
+<a onclick="toggleHint('hint-1-12')">Hint For Step 6</a>
+<div class="hint" id="hint-1-12" style="display:none">
 The format should look similar to: <br>
 <code> SELECT e.____, i.____, i.____, i.____, i.____ FROM ____ e JOIN ____ i ON e.____ = i.____ WHERE i.___ >= 5 AND i.___ >= 6</code>
 </div>
 
-<a onclick="toggleHint('hint-1-12')">Solution For Step 6</a>
-<div class="hint" id="hint-1-12" style="display:none">
+<a onclick="toggleHint('hint-1-13')">Solution For Step 6</a>
+<div class="hint" id="hint-1-13" style="display:none">
 <code>SELECT e.UserLabel, i.MinZ, i.MinY, i.MinZ, i.MaxX, i.MaxY, i.MaxZ FROM bis.SpatialElement e JOIN bis.SpatialIndex i ON e.ECInstanceId=i.ECInstanceId WHERE i.MinX >= 5 AND i.MinY >= 6 </code>
 </div>
 
@@ -133,8 +138,8 @@ The format should look similar to: <br>
 
 * (X, Y, Z) are cartesian coordinates.
 
-<a onclick="toggleHint('hint-1-12')">Solution For Challenge</a>
-<div class="hint" id="hint-1-12" style="display:none">
+<a onclick="toggleHint('hint-1-14')">Solution For Challenge</a>
+<div class="hint" id="hint-1-14" style="display:none">
 <code> SELECT e.UserLabel, i.MinZ, i.MinY, i.MinZ, i.MaxX, i.MaxY, i.MaxZ FROM bis.SpatialElement e JOIN bis.SpatialIndex i ON e.ECInstanceId=i.ECInstanceId WHERE i.MinX >= 5 AND i.MinY >= 6 AND i.MinZ >= 6 AND i.MaxX <= 15 AND i.MaxY <= 15 AND i.MaxZ <= 14</code>
 </div>
 
