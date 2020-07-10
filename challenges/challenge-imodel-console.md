@@ -48,8 +48,7 @@ The format should look similar to: <code>SELECT ____ FROM ____</code>
 <div class="hint" id="hint-1-2" style="display:none">
 <code>SELECT * FROM Bis.SpatialElement</code>
 </div>
-</br>
-
+  
 ### 2) Instead of displaying all EC properties, write a query that only lists the EC properties we're interested in: "ECInstanceId", "UserLabel" and "Origin"
 
 * ECInstanceId is the `unique` identifier for the element.
@@ -65,7 +64,7 @@ The format should look similar to: <code>SELECT ____, ____, ____ FROM ____</code
 <div class="hint" id="hint-1-4" style="display:none">
 <code>SELECT ECInstanceId, UserLabel, Origin FROM Bis.SpatialElement</code>
 </div>
-</br>
+  
 
 ### 3) While the origin locates where the spatial element is, the size is still unknown. We need to query from the class "Bis.SpatialIndex" for this.
 
@@ -76,7 +75,7 @@ The format should look similar to: <code>SELECT ____, ____, ____ FROM ____</code
 <div class="hint" id="hint-1-5" style="display:none">
 <code>SELECT * FROM Bis.SpatialIndex</code>
 </div>
-</br>
+  
 
 ### 4) Notice how SpatialIndex contains the range but it doesn't contain 'UserLabel'. We need to `JOIN` class `Bis.SpatialElement` and class `Bis.SpatialIndex` together.
 
@@ -103,7 +102,7 @@ The format should look similar to: <br>
 <div class="hint" id="hint-1-9" style="display:none">
 <code>SELECT * FROM bis.SpatialElement JOIN bis.SpatialIndex ON bis.SpatialElement.ECInstanceId=bis.SpatialIndex.ECInstanceId</code>
 </div>
-</br>
+  
 
 ### 5) Once again the data shown is too verbose. Only pull the information we want to see.
 
@@ -120,7 +119,7 @@ The format should look similar to: <br>
 <div class="hint" id="hint-1-11" style="display:none">
 <code>SELECT e.UserLabel, i.MinZ, i.MinY, i.MinZ, i.MaxX, i.MaxY, i.MaxZ FROM bis.SpatialElement e JOIN bis.SpatialIndex i ON e.ECInstanceId=i.ECInstanceId</code>
 </div>
-</br>
+  
 
 ### 6) Now that we have all the information we need, it's time to add a simple condition.
 
@@ -137,7 +136,7 @@ The format should look similar to: <br>
 <div class="hint" id="hint-1-13" style="display:none">
 <code>SELECT e.UserLabel, i.MinZ, i.MinY, i.MinZ, i.MaxX, i.MaxY, i.MaxZ FROM bis.SpatialElement e JOIN bis.SpatialIndex i ON e.ECInstanceId=i.ECInstanceId WHERE i.MinX >= 5 AND i.MinY >= 6 </code>
 </div>
-</br>
+  
 
 ### 7) The final challenge is to retrieve the user labels of all spatial elements that are contained in a cube with the minimum bounding coordinate at (5, 6, 6) and maximum bounding coordinate at (15, 15, 14).
 
@@ -147,7 +146,7 @@ The format should look similar to: <br>
 <div class="hint" id="hint-1-14" style="display:none">
 <code> SELECT e.UserLabel, i.MinZ, i.MinY, i.MinZ, i.MaxX, i.MaxY, i.MaxZ FROM bis.SpatialElement e JOIN bis.SpatialIndex i ON e.ECInstanceId=i.ECInstanceId WHERE i.MinX >= 5 AND i.MinY >= 6 AND i.MinZ >= 6 AND i.MaxX <= 15 AND i.MaxY <= 15 AND i.MaxZ <= 14</code>
 </div>
-</br>
+  
 
 ## Conclusion
 
