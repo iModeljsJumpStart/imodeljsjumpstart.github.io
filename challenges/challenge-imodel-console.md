@@ -66,7 +66,7 @@ The format should look similar to: <code>SELECT ____, ____, ____ FROM ____</code
 <code>SELECT ECInstanceId, UserLabel, Origin FROM Bis.SpatialElement</code>
 </div>
 
-### 3) While the origin tells us where the spatial element is - it doesn't tell us the size of the element. We'll need to query from class "Bis.SpatialIndex" for this.
+### 3) While the origin tells us where the spatial element is, it doesn't tell us the size of the element. We'll need to query from class "Bis.SpatialIndex" for this.
 
 * Class [Bis.SpatialIndex](https://www.imodeljs.org/bis/domains/biscore.ecschema/#spatialindex) contains range information for spatial elements
 * Try to write a query (similar to step 1) that lists all information available in class `Bis.SpatialIndex`
@@ -76,7 +76,7 @@ The format should look similar to: <code>SELECT ____, ____, ____ FROM ____</code
 <code>SELECT * FROM Bis.SpatialIndex</code>
 </div>
 
-### 4) While SpatialIndex contains the range, it doesn't contain 'UserLabel'. We need to `JOIN` class `Bis.SpatialElement` and class `Bis.SpatialIndex` together.
+### 4) Notice how SpatialIndex contains the range but it doesn't contain 'UserLabel'. We need to `JOIN` class `Bis.SpatialElement` and class `Bis.SpatialIndex` together.
 
 * Write a query to to combine all the information from class `Bis.SpatialElement` and `Bis.SpatialIndex` together.
 * To join the classes, we need to find which ECProperty exists in both classes to `JOIN` on.
@@ -97,7 +97,7 @@ The format should look similar to: <br>
 <code>SELECT * FROM bis.SpatialElement JOIN bis.SpatialIndex ON bis.SpatialElement.ECInstanceId=bis.SpatialIndex.ECInstanceId</code>
 </div>
 
-### 5) You'll notice this is too much information again - let's only pull the information we want to see.
+### 5) You'll notice this is too much information we don't need. Let's only pull the information we want to see.
 
 * Write a query to pull only `UserLabel` from `Bis.SpatialElement` and `MinX, MinY, MinZ, MaxX, MaxY, MaxZ` from `Bis.SpatialIndex`
 * TIP: We can alias names - instead of writing `bis.SpatialElement.ECInstanceId`, we can write `e.ECInstanceId` if we declare `SELECT ... FROM bis.SpatialElement e`
@@ -113,7 +113,7 @@ The format should look similar to: <br>
 <code>SELECT e.UserLabel, i.MinZ, i.MinY, i.MinZ, i.MaxX, i.MaxY, i.MaxZ FROM bis.SpatialElement e JOIN bis.SpatialIndex i ON e.ECInstanceId=i.ECInstanceId</code>
 </div>
 
-### 6) Now we have exactly all the information we need. It's time to add a simple condition.
+### 6) Now that we have all the information we need, it's time to add a simple condition.
 
 * Write a query with the WHERE clause to show only spatial elements that have a MinX >= 5 AND MinY >= 6.
 * The format for WHERE clause is `FROM ... WHERE ... AND ...`
@@ -131,12 +131,18 @@ The format should look similar to: <br>
 
 ### 7) The final challenge is to get the user labels of all spatial elements that is contained in a cube with the minimum bounding coordinate at (5, 6, 6) and maximum bounding coordinate at (15, 15, 14).
 
-* The coordinates follows an (X, Y, Z) coordinate pattern.
+* (X, Y, Z) are cartesian coordinates.
 
-<a onclick="toggleHint('hint-1-12')">Solution For Step 7</a>
+<a onclick="toggleHint('hint-1-12')">Solution For Challenge</a>
 <div class="hint" id="hint-1-12" style="display:none">
 <code> SELECT e.UserLabel, i.MinZ, i.MinY, i.MinZ, i.MaxX, i.MaxY, i.MaxZ FROM bis.SpatialElement e JOIN bis.SpatialIndex i ON e.ECInstanceId=i.ECInstanceId WHERE i.MinX >= 5 AND i.MinY >= 6 AND i.MinZ >= 6 AND i.MaxX <= 15 AND i.MaxY <= 15 AND i.MaxZ <= 14</code>
 </div>
+
+## Conclusion
+
+So, were you up to the challenge? Feel free to explore the console and experiment with your own queries. You can learn much more about how ECSQL queries work [here](https://www.imodeljs.org/learning/ecsql/)
+
+Feedback is welcome!  Let us know via the [iModel.js community](https://www.imodeljs.org/learning/communityresources/).
 
 <script type="text/javascript">
     function toggleHint (hintId) {
