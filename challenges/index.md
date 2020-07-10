@@ -8,3 +8,6 @@ Learn to override the appearance of element geometry.
 
 Learn to create your own non-graphic desktop app which can query an [iModel Snapshot](https://www.imodeljs.org/learning/backend/accessingimodels/).
 
+- [Finding spatial elements in a confined space](challenge-imodel-console.md)
+
+Learn useful queries to make the most out of visualizing your imodels.
