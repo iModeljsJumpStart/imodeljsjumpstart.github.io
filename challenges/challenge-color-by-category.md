@@ -17,9 +17,9 @@ By completing this you will learn how to:
 
 3. `npm install`
 
-4. `npm run`
+4. `npm run build`
 
-5. `npm run`
+5. `npm start`
 
 6. The app should run and display a small model of a plant.
 
