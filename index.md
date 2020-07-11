@@ -15,7 +15,7 @@
 Resources
 
 - [Getting Started with iModel.js](https://www.imodeljs.org/getting-started/)
-- Challenge: [Create a Command Line App](challenge-commandline-app)
+- Challenge: [Create a Command Line App](./challenges/challenge-commandline-app)
 
 ### Day 1 - Session 2
 
@@ -25,7 +25,7 @@ Resources
 
 Resources
 - [iModel.js Sample Showcase](https://www.imodeljs.org/sample-showcase/)
-- Challenge: [Override Color By Category](challenge-color-by-category.md) 
+- Challenge: [Override Color By Category](./challenges/challenge-color-by-category.md) 
 
 ### Day 2 - Session 1
 
@@ -38,7 +38,7 @@ Resources
 - [iModel Console](https://imodelconsole.bentley.com/)
 - [ECSQL Tutorial](https://www.imodeljs.org/learning/ecsqltutorial/)
 
-- Challenge: [Finding spatial elements in a confined space](challenge-imodel-console.md)
+- Challenge: [Finding spatial elements in a confined space](./challenges/challenge-imodel-console.md)
 
 ### Day 2 - Session 2
 
