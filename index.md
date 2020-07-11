@@ -37,7 +37,6 @@ Resources
 
 - [iModel Console](https://imodelconsole.bentley.com/)
 - [ECSQL Tutorial](https://www.imodeljs.org/learning/ecsqltutorial/)
-
 - Challenge: [Finding spatial elements in a confined space](./challenges/challenge-imodel-console.md)
 
 ### Day 2 - Session 2
