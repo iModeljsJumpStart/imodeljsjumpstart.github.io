@@ -22,7 +22,7 @@ By completing this challenge you will learn how to:
 
 The app won't be able to open any iModels as is. You will need to add the functionality to pass iModel and Project name in the URL and then open the iModel.
 
-NOTE: The project name is the same as iModel name for iModels created using [registration dashboard](https://www.imodeljs.org/getting-started/registration-dashboard/?tab=1).
+NOTE: In this case, the iModel and Project name will be the same.
 
 ## Goals
 
