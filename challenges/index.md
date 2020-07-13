@@ -1,8 +1,16 @@
 # Challenges
 
-- [Override Color By Category](challenge-color-by-category.md) 
+- [Override Color By Category](challenge-color-by-category.md)
 
 Learn to override the appearance of element geometry.
+
+- [Add URL Parameters](challenge-add-url-params.md)
+
+Learn to use URL params to highlight elements.
+
+- [Deploy iModel.js App](challenge-deploy-imodeljs-app.md)
+
+Learn to deploy an iModel.js Web App.
 
 - [Create a Command Line App](challenge-commandline-app)
 
