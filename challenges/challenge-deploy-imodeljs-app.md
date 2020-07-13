@@ -28,7 +28,7 @@ If you need help try <a onclick="toggleHint('hints-1')">these hints</a>.
 
 <a onclick="toggleHint('hint-1-1')">Hint 1</a>
 <div class="hint" id="hint-1-1" style="display:none">
-Seriously, did you even read the blog post?
+Seriously, did you read the blog post?
 </div>
 <br>
 

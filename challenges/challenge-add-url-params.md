@@ -4,7 +4,7 @@
 
 By completing this challenge you will learn how to:
 - Open iModels by passing iModel/Project names in the URL.
-- Use URL params to generate special links that emphasize and zoom into specific elements.
+- Use URL params to generate shareable links that can emphasize and zoom into elements.
 
 ## Setup
 
@@ -61,9 +61,13 @@ Element IDs can be separated in URL by adding spaces between them. Parse the spa
 
 <a onclick="toggleHint('hint-1-3')">Hint 3</a>
 <div class="hint" id="hint-1-3" style="display:none">
-API for emphasizing elements: hhttps://www.imodeljs.org/reference/imodeljs-frontend/rendering/emphasizeelements/emphasizeelements/
+API for <a href="https://www.imodeljs.org/reference/imodeljs-frontend/rendering/emphasizeelements/emphasizeelements/" target="_blank">emphasizing elements.</a>
+</div>
+<br>
 
-API for zooming into elements: https://www.imodeljs.org/reference/imodeljs-frontend/views/viewport/zoomtoelements/
+<a onclick="toggleHint('hint-1-4')">Hint 4</a>
+<div class="hint" id="hint-1-4" style="display:none">
+API for <a href="https://www.imodeljs.org/reference/imodeljs-frontend/views/viewport/zoomtoelements/" target="_blank">zooming into elements.</a>
 </div>
 <br>
 
