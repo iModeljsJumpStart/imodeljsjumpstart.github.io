@@ -16,6 +16,7 @@ Resources
 
 - [Getting Started with iModel.js](https://www.imodeljs.org/getting-started/)
 - Challenge: [Create a Command Line App](./challenges/challenge-commandline-app)
+- Challenge: [Deploy iModel.js App](./challenges/challenge-deploy-imodeljs-app.md)
 
 ### Day 1 - Session 2
 
@@ -25,7 +26,8 @@ Resources
 
 Resources
 - [iModel.js Sample Showcase](https://www.imodeljs.org/sample-showcase/)
-- Challenge: [Override Color By Category](./challenges/challenge-color-by-category.md) 
+- Challenge: [Override Color By Category](./challenges/challenge-color-by-category.md)
+- Challenge: [Challenge Add URL Parameters](./challenges/challenge-add-url-params.md)
 
 ### Day 2 - Session 1
 
@@ -45,3 +47,6 @@ Resources
 
 *Discover the ins and outs of writing your own iModel.js agent application.  Learn how your app can listen and respond to changes from the iModelHub.*
 
+Resources
+
+- [Agent Starter](https://github.com/imodeljs/agent-starter)
