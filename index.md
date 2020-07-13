@@ -4,6 +4,8 @@
 
 [Event Registration](https://event.on24.com/wcc/r/2420553/611791C89EA3F242BDD030DE3F88812B/1140911)
 
+Have Questions about iModel.js?  See the iModel.js [community resources](https://www.imodeljs.org/learning/communityresources/).
+
 ## Agenda
 
 ### Day 1 - Session 1
