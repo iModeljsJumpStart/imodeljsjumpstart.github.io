@@ -73,7 +73,8 @@ API for <a href="https://www.imodeljs.org/reference/imodeljs-frontend/views/view
 
 </div>
 
-2. If you finish **Double Bonus**, use your new feature to generate shareable links that highlight specific element(s). Maybe you can find something more interesting than the dairy cooler ;)
+2. If you [deploy the app](./challenge-deploy-imodeljs-app.md): use your new feature to generate shareable links that highlight specific element(s).
+Maybe you can find something more interesting than the dairy cooler ;)
 
 NOTE: If you share links with a colleague/friend, they will need a CONNECT [account](https://ims.bentley.com/IMS/Account/Login) to view the iModel. Don't forget to add them to the project using the [registration dashboard](https://www.imodeljs.org/getting-started/registration-dashboard/?tab=1)!
 
