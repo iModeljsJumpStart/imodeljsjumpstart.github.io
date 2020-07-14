@@ -52,3 +52,5 @@ Resources
 Resources
 
 - [Agent Starter](https://github.com/imodeljs/agent-starter)
+- [Source code and data for session example agent](https://github.com/iModeljsJumpStart/jumpstart-agent)
+- Challenge: [Improve your agent's reliability](./challenges/challenge-improve-agent-reliability.md)

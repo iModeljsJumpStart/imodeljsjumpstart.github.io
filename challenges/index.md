@@ -19,3 +19,7 @@ Learn to create your own non-graphic desktop app which can query an [iModel Snap
 - [Finding spatial elements in a confined space](challenge-imodel-console.md)
 
 Learn useful queries to make the most out of visualizing your imodels.
+
+- [Improve Your iModel.js Agent's Reliability](challenge-improve-agent-reliability.md)
+
+Make your iModel.js agent more resilient to errors and scheduled maintenance.
