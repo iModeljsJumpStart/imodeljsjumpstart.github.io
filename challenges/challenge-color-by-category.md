@@ -17,11 +17,9 @@ By completing this you will learn how to:
 
 3. `npm install`
 
-4. `npm run build`
+4. `npm start`
 
-5. `npm start`
-
-6. The app should run and display a small model of a plant.
+5. The app should run and display a small model of a plant.
 
 Note: The app will be built automatically in step 3, and will be automatically updated anytime you make code changes.  There is no need to stop and restart
 the app manually when making code changes.
